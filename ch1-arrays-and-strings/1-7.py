@@ -11,12 +11,10 @@
 
 def rotate(matrix):
     for i in range(len(matrix)):
-        for j in range(len(matrix)):
-            if j>i:
-                continue
-            temp = matrix[i][j]
-            matrix[i][j] = matrix[j][i]
-            matrix[j][i] = temp
+        for j in range(i,len(matrix)):
+            temp = matrix[j][i]
+            matrix[j][i] = matrix[i][j]
+            matrix[i][j] = temp
 
     return matrix
 
